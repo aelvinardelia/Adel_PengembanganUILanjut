@@ -53,6 +53,19 @@ const routes = [
       },
     ],
   },
+  // TAMBAHAN RUTE DASHBOARD (RAIL & PANE SYSTEM)
+  {
+    path: '/dashboard',
+    component: () => import('@/layouts/DashboardLayout.vue'),
+    children: [
+      {
+        path: '',
+        name: 'dashboard',
+        component: () => import('@/views/Dashboard.vue'),
+        meta: { breadcrumb: 'Dashboard' },
+      },
+    ],
+  },
 ]
 
 const router = createRouter({
