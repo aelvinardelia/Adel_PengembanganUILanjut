@@ -23,26 +23,22 @@ defineEmits(['view-detail', 'complete', 'delete'])
         {{ isCompleted ? 'Completed' : 'Active' }}
       </span>
     </div>
-
     <h3 :class="['event-title', { 'text-strike': isCompleted }]">{{ event.title }}</h3>
     <p class="event-meta">{{ event.date }} &bull; {{ event.loc }}</p>
     <p class="event-desc">{{ event.desc }}</p>
-
     <div v-if="isCompleted" class="completed-notice">
       This event has ended and is archived from the public catalog.
     </div>
-
     <div class="card-actions">
       <template v-if="!isCompleted">
         <button class="btn-action btn-detail" @click="$emit('view-detail', event.id)">
           View Details
         </button>
         <button class="btn-action btn-complete" @click="$emit('complete', event)">
-          ✔ Complete Event
+          Complete Event
         </button>
         <button class="btn-action btn-delete" @click="$emit('delete', event)">Delete</button>
       </template>
-
       <template v-else>
         <button class="btn-action btn-delete" @click="$emit('delete', event)">
           Delete from Archive
@@ -156,8 +152,8 @@ defineEmits(['view-detail', 'complete', 'delete'])
 
 .btn-detail:hover {
   background: var(--bg-light);
-  color: var(--primary);
   border-color: var(--primary);
+  color: var(--primary);
 }
 
 .btn-complete {
@@ -172,8 +168,8 @@ defineEmits(['view-detail', 'complete', 'delete'])
 
 .btn-delete {
   color: #e63946;
-  border-color: rgba(230, 57, 70, 0.3);
-  flex: 0 auto;
+  border-color: rgba(230, 57, 78, 0.3);
+  flex: 0 0 auto;
 }
 
 .btn-delete:hover {
